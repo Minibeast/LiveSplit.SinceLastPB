@@ -145,7 +145,10 @@ namespace LiveSplit.UI.Components
             Attempt pbattempt = GetAttempt();
             if (pbattempt.Index <= 0)
                 return 0;
-            return State.Run.AttemptCount - pbattempt.Index;
+            int result = State.Run.AttemptHistory.Count - pbattempt.Index;
+            if (State.CurrentPhase != TimerPhase.NotRunning)
+                result += 1;
+            return result;
         }
 
         private string GetDaysSince()
