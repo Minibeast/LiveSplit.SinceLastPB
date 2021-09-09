@@ -94,7 +94,7 @@ namespace LiveSplit.UI.Components
             BackgroundColor2 = SettingsHelper.ParseColor(element["BackgroundColor2"]);
             GradientString = SettingsHelper.ParseString(element["BackgroundGradient"]);
             Display2Rows = SettingsHelper.ParseBool(element["Display2Rows"], false);
-            DisplayedInfo = SettingsHelper.ParseEnum<DisplayedInfoType>(element["TimeSaveAccuracy"], DisplayedInfoType.DisplayDays);
+            DisplayedInfo = SettingsHelper.ParseEnum<DisplayedInfoType>(element["DisplayedInfo"], DisplayedInfoType.DisplayDays);
         }
 
         public XmlNode GetSettings(XmlDocument document)
